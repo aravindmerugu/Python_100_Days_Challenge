@@ -1,42 +1,51 @@
-print('''
-*******************************************************************************
-          |                   |                  |                     |
- _________|________________.=""_;=.______________|_____________________|_______
-|                   |  ,-"_,=""     `"=.|                  |
-|___________________|__"=._o`"-._        `"=.______________|___________________
-          |                `"=._o`"=._      _`"=._                     |
- _________|_____________________:=._o "=._."_.-="'"=.__________________|_______
-|                   |    __.--" , ; `"=._o." ,-"""-._ ".   |
-|___________________|_._"  ,. .` ` `` ,  `"-._"-._   ". '__|___________________
-          |           |o`"=._` , "` `; .". ,  "-._"-._; ;              |
- _________|___________| ;`-.o`"=._; ." ` '`."\` . "-._ /_______________|_______
-|                   | |o;    `"-.o`"=._``  '` " ,__.--o;   |
-|___________________|_| ;     (#) `-.o `"=.`_.--"_o.-; ;___|___________________
-____/______/______/___|o;._    "      `".o|o_.--"    ;o;____/______/______/____
-/______/______/______/_"=._o--._        ; | ;        ; ;/______/______/______/_
-____/______/______/______/__"=._o--._   ;o|o;     _._;o;____/______/______/____
-/______/______/______/______/____"=._o._; | ;_.--"o.--"_/______/______/______/_
-____/______/______/______/______/_____"=.o|o_.--""___/______/______/______/____
-/______/______/______/______/______/______/______/______/______/______/_____ /
-*******************************************************************************
-''')
-print("Welcome to Treasure Island.")
-print("Your mission is to find the treasure.") 
+import random
 
-le_re = input('You\'re at a crossroad. Where do you want to go? Type "left" or "right: ').lower()
-if(le_re=="left"):
-  wa_sw = input('''You\'ve come to a lake. There is an island in the middle of the lake. Type "wait" to wait for a boat. Type "swim" to swim across.: ''').lower()
-  if(wa_sw=="wait"):
-    door = input("""You arrive at the island unharmed. There is a house with 3 doors. One red, one yellow and one blue. Which colour do you choose?: """).lower()
-    if(door == "yellow"):
-      print("You found the treasure! You Win!")
-    elif(door=="red"):
-      print("It's a room full of fire. Game Over.")
-    elif(door=="blue"):
-      print("You enter a room of beasts. Game Over.")
-    else:
-      print("You chose a door that doesn't exist. Game Over.")  
+rock = '''
+    _______
+---'   ____)
+      (_____)
+      (_____)
+      (____)
+---.__(___)
+'''
+
+paper = '''
+    _______
+---'   ____)____
+          ______)
+          _______)
+         _______)
+---.__________)
+'''
+
+scissors = '''
+    _______
+---'   ____)____
+          ______)
+       __________)
+      (____)
+---.__(___)
+'''
+
+#Write your code below this line 👇
+
+user_choice = int(input("1. for rock\n2. for paper\n3. scissors\nchoose: "))
+#system_choice = random.randint(1,3)
+def play_game():
+  game = [rock,paper,scissors]
+  print(f"you chose {game[user_choice-1]}")
+  system_choice = random.choice(game)
+  print(f"system chose {system_choice}")
+
+  if(game[user_choice-1]==system_choice):
+    print("it's a draw")
+    
+  elif (user_choice-1==0 and game.index(system_choice)==2) or (user_choice-1==2 and game.index(system_choice)==1)or (user_choice-1==1 and game.index(system_choice)==0):
+    print("you wins!")
   else:
-    print("You get attacked by an angry trout. Game Over.")
+    print("you lose")
+
+if user_choice >=4 or user_choice <=0:
+  print("invalid choice")
 else:
-  print("You fell into a hole. Game Over.")
+  play_game()  
