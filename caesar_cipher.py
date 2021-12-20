@@ -1,4 +1,4 @@
-from caesar_cypher_art import logo
+from caesar_cipher_art import logo
 
 print(logo)
 alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
@@ -27,7 +27,7 @@ def caesar_cipher(text,shift,direction):
           index = ((index+1) % 26)-1
         decode+=alphabet[index]
       else:
-        decode+=letter  
+        encode+=letter  
     print(f"the decoded text is '{decode}'")
 
 
