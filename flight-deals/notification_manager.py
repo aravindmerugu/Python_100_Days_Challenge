@@ -1,10 +1,10 @@
 from twilio.rest import Client
 import smtplib
 
-account_sid = "ACadecc139d8512a2268ebb829abf04666"
-auth_token = "b6f26dceb0fd0cbd897dcf4d2c97b673"
-TWILIO_VIRTUAL_NUMBER = "+12185177821"
-TWILIO_VERIFIED_NUMBER = "+919182669603"
+account_sid = "YOUR_SID"
+auth_token = "YOUR_AUTH_TOKEN"
+TWILIO_VIRTUAL_NUMBER = "YOUR_TWILLIO_VIRTUAL_NUMBER"
+TWILIO_VERIFIED_NUMBER = "YOUR_TWILLIO_VERIFIED_NUMBER"
 
 class NotificationManager:
     def __init__(self):
